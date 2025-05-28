@@ -1,0 +1,288 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: sticky;
+  top: 0;
+}
+/* Existing styles... */
+
+.authButton {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 0.75rem;
+  border: none;
+}
+
+.signInButton {
+  background: linear-gradient(135deg, #f472b6 0%, #fb923c 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signInButton:hover {
+  background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  transform: translateY(-1px);
+}
+
+.signUpButton {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signUpButton:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  transform: translateY(-1px);
+}
+
+.userButtonWrapper {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.userAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.userAvatar:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.userName {
+  color: white;
+  font-weight: 500;
+}
+
+.adminLink {
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-right: 0.75rem;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.adminLink:hover {
+  background: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+  .authButton {
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+  }
+  
+  .adminLink {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+  }
+}
+.scrolled {
+  background: rgba(0, 20, 40, 0.9);
+  padding: 0.8rem 5%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.logoPrimary {
+  color: #00AAEE;
+}
+
+.logoSecondary {
+  color: #FFFFFF;
+  margin-left: 0.2rem;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  color: #00AAEE;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00AAEE;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.active {
+  color: #00AAEE;
+}
+
+.active::after {
+  width: 100%;
+}
+
+.blinking {
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; text-shadow: 0 0 10px #DD2476; }
+  100% { opacity: 1; }
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Existing styles... */
+
+/* Base navLink style that all buttons will share */
+.navLink {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin: 0 0.25rem;
+  border: 1px solid transparent;
+}
+
+/* Active/Hover state for all nav links */
+.navLink:hover, .navLink.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Auth buttons - same shape as nav links but with different colors */
+.authButton {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.signInButton:hover {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.2) 0%, rgba(251, 146, 60, 0.2) 100%);
+  border-color: rgba(244, 114, 182, 0.5);
+}
+
+.signUpButton:hover {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+  border-color: rgba(79, 70, 229, 0.5);
+}
+
+/* Admin button - matches nav but with different accent */
+.adminButton {
+  position: relative;
+  overflow: hidden;
+}
+
+.adminButton::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.adminButton:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* User button styling */
+.userButtonWrapper {
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.userButtonTrigger {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.userButtonTrigger:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+/* Blinking effect for Results link */
+.blinking {
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navLink {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
