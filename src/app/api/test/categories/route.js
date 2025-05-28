@@ -24,7 +24,7 @@ export async function GET() {
     ]);
 
     return Response.json(categories);
-  } catch (error) {
+  } catch  {
     return Response.json(
       { error: 'Failed to fetch categories' },
       { status: 500 }

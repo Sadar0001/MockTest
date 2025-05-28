@@ -1,7 +1,18 @@
-import { Roles } from '@/types/globals'
+import { Roles } from '../types/globals';
 import { auth } from '@clerk/nextjs/server'
+
+
+
+interface CustomClaims {
+  metadata?: {
+    role?: Roles
+  }
+}
 
 export const checkRole = async (role: Roles) => {
   const { sessionClaims } = await auth()
-  return sessionClaims?.metadata.role === role
+
+  const claims = sessionClaims as CustomClaims
+
+  return claims.metadata?.role === role
 }
