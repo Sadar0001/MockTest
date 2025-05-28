@@ -1,7 +1,7 @@
 // app/api/users/[id]/route.js
 import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/dbConnect';
-import User from '@/models/User';
+import dbConnect from '../../../../lib/dbConnect';
+import User from '../../../../models/User';
 
 // GET single user
 export async function GET(request, { params }) {
