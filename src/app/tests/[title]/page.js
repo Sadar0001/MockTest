@@ -147,8 +147,8 @@ export default function TestTitleCard({ params }) {
               Purchase Confirmation
             </Dialog.Title>
             <Dialog.Description className="text-gray-300 mb-6">
-              You are about to purchase "{test.title}" for ${test.price}. This feature is currently in development.
-            </Dialog.Description>
+  You are about to purchase {test.title} for ${test.price}. This feature is currently in development.
+</Dialog.Description>
             
             <div className="flex space-x-4">
               <button
